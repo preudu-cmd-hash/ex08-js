@@ -48,3 +48,4 @@ btn.addEventListener('click', () => {
     input.value = '';
     salvarTarefas(); 
 });
+document.addEventListener('DOMContentLoaded', carregarTarefas);
