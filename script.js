@@ -11,7 +11,7 @@ function criarItemTarefa(texto) {
     
     const btnRemover = document.createElement('button');
     btnRemover.textContent = 'REMOVER';
-    btnRemover.className = 'btn-remover'; // Aplicar a classe CSS customizada
+    btnRemover.className = 'btn-remover';
     
     btnRemover.addEventListener('click', () => {
         item.style.opacity = '0';
