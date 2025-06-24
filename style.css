@@ -162,76 +162,6 @@ button[onclick*="remover"]:active, .btn-remover:active {
     box-shadow: 0 2px 8px rgba(74, 14, 78, 0.6);
 }
 
-/* Variação alternativa do botão remover - mais elegante */
-.btn-remover-alt {
-    background: transparent;
-    color: #8A2BE2;
-    border: 2px solid #8A2BE2;
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    margin-left: 15px;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-remover-alt:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #8A2BE2;
-    transition: width 0.3s ease;
-    z-index: -1;
-}
-
-.btn-remover-alt:hover {
-    color: #fff;
-    border-color: #9A4BE2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
-}
-
-.btn-remover-alt:hover:before {
-    width: 100%;
-}
-
-/* Botão remover com ícone "X" */
-.btn-remover-x {
-    background: linear-gradient(45deg, #4A0E4E, #2D1B69);
-    color: #fff;
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(74, 14, 78, 0.4);
-}
-
-.btn-remover-x:hover {
-    background: linear-gradient(45deg, #6A1B9A, #4A0E4E);
-    transform: rotate(90deg) scale(1.1);
-    box-shadow: 0 4px 15px rgba(106, 27, 154, 0.5);
-}
-
-.btn-remover-x:active {
-    transform: rotate(90deg) scale(0.95);
-}
-
 .empty-state {
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
@@ -273,4 +203,53 @@ button[onclick*="remover"]:active, .btn-remover:active {
         margin-top: 10px;
         align-self: flex-end;
     }
+}
+
+.concluida {
+    text-decoration: line-through;
+    color: #a122eb;
+}
+
+.btnConcluir {
+    background: linear-gradient(45deg, #4A0E4E, #2D1B69);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    box-shadow: 0 2px 8px rgba(74, 14, 78, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btnConcluir:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btnConcluir:hover {
+    background: linear-gradient(45deg, #6A1B9A, #4A0E4E);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(106, 27, 154, 0.5);
+}
+
+.btnConcluir:hover:before {
+    left: 100%;
+}
+
+.btnConcluir:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(74, 14, 78, 0.6);
 }

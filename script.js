@@ -5,6 +5,11 @@ const lista = document.getElementById('listaTarefas');
 function criarItemTarefa(texto) {
     const item = document.createElement('li');
     
+    const botaoConcluir = document.createElement('button');
+    botaoConcluir.textContent = 'Concluir'
+    botaoConcluir.className = 'btnConcluir'
+
+    
     const spanTexto = document.createElement('span');
     spanTexto.textContent = texto;
     spanTexto.style.flex = '1';
@@ -13,6 +18,10 @@ function criarItemTarefa(texto) {
     btnRemover.textContent = 'REMOVER';
     btnRemover.className = 'btn-remover';
     
+    botaoConcluir.addEventListener('click', () =>{
+        spanTexto.classList.toggle('concluida');
+    });
+
     btnRemover.addEventListener('click', () => {
         item.style.opacity = '0';
         item.style.transform = 'translateX(-20px)';
@@ -23,8 +32,9 @@ function criarItemTarefa(texto) {
             salvarTarefas();
         }, 300);
     });
-
+    
     item.appendChild(spanTexto);
+    item.appendChild(botaoConcluir);
     item.appendChild(btnRemover);
     lista.appendChild(item);
     
