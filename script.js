@@ -57,7 +57,7 @@ function salvarTarefas() {
     lista.querySelectorAll('li').forEach(item => {
         const texto = item.querySelector('span').textContent.trim();
         const concluida = item.querySelector('span').classList.contains('concluida');
-        tarefas.push({ texto, concluida });
+        tarefas.push({texto, concluida });
     });
 
     localStorage.setItem('minhasTarefas', JSON.stringify(tarefas));
