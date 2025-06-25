@@ -20,6 +20,7 @@ function criarItemTarefa(texto) {
     
     botaoConcluir.addEventListener('click', () =>{
         spanTexto.classList.toggle('concluida');
+        salvarTarefas();
     });
 
     btnRemover.addEventListener('click', () => {
@@ -49,8 +50,10 @@ function criarItemTarefa(texto) {
 
 function salvarTarefas() {
     const tarefas = [];
-    lista.querySelectorAll('li span').forEach(span => {
-        tarefas.push(span.textContent.trim()); 
+    lista.querySelectorAll('li').forEach(item => {
+        const texto = item.querySelector('span').textContent.trim();
+        const concluida = item.querySelector('span').classList.contains('concluida');
+        tarefas.push({ texto, concluida });
     });
 
     localStorage.setItem('minhasTarefas', JSON.stringify(tarefas));
@@ -60,8 +63,8 @@ function carregarTarefas() {
     const tarefasSalvas = localStorage.getItem('minhasTarefas');
     if (tarefasSalvas) {
         const tarefas = JSON.parse(tarefasSalvas);
-        tarefas.forEach(textoDaTarefa => {
-            criarItemTarefa(textoDaTarefa);
+        tarefas.forEach(tarefa => {
+            criarItemTarefa(tarefa.texto, tarefa.concluida);
         });
     }
 }
@@ -72,7 +75,7 @@ btn.addEventListener('click', () => {
         alert('Digite uma tarefa!');
         return;
     }
-    criarItemTarefa(texto);
+    criarItemTarefa(texto, concluida = false);
     input.value = '';
     salvarTarefas(); 
 });
