@@ -14,7 +14,7 @@ function criarItemTarefa(texto, concluida = false) {
     const spanTexto = document.createElement('span');
     spanTexto.textContent = texto;
     spanTexto.style.flex = '1';
-    if (concluida) {
+    if (spanTexto === concluida) {
         spanTexto.classList.add('concluida');
     }
     
