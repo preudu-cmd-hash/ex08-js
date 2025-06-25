@@ -5,9 +5,10 @@ const lista = document.getElementById('listaTarefas');
 function criarItemTarefa(texto, concluida = false) {
     const item = document.createElement('li');
     
-    const botaoConcluir = document.createElement('button');
-    botaoConcluir.textContent = 'Concluir'
-    botaoConcluir.className = 'btnConcluir'
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox'
+    checkbox.className = 'btnConcluir'
+    checkbox.checked = concluida
 
     
     const spanTexto = document.createElement('span');
