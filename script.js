@@ -2,7 +2,7 @@ const input = document.getElementById('tarefaInput');
 const btn = document.getElementById('adicionarBtn');
 const lista = document.getElementById('listaTarefas');
 
-function criarItemTarefa(texto) {
+function criarItemTarefa(texto, concluida = false) {
     const item = document.createElement('li');
     
     const botaoConcluir = document.createElement('button');
@@ -75,7 +75,7 @@ btn.addEventListener('click', () => {
         alert('Digite uma tarefa!');
         return;
     }
-    criarItemTarefa(texto, concluida = false);
+    criarItemTarefa(texto);
     input.value = '';
     salvarTarefas(); 
 });
