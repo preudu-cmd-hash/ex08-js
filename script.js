@@ -22,7 +22,7 @@ function criarItemTarefa(texto, concluida = false) {
     btnRemover.textContent = 'REMOVER';
     btnRemover.className = 'btn-remover';
     
-    botaoConcluir.addEventListener('click', () =>{
+    checkbox.addEventListener('click', () =>{
         spanTexto.classList.toggle('concluida');
         salvarTarefas();
     });
@@ -39,7 +39,7 @@ function criarItemTarefa(texto, concluida = false) {
     });
     
     item.appendChild(spanTexto);
-    item.appendChild(botaoConcluir);
+    item.appendChild(checkbox);
     item.appendChild(btnRemover);
     lista.appendChild(item);
     
