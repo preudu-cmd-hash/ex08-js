@@ -75,7 +75,7 @@ btn.addEventListener('click', () => {
         alert('Digite uma tarefa!');
         return;
     }
-    criarItemTarefa(texto);
+    criarItemTarefa(texto, concluida = false);
     input.value = '';
     salvarTarefas(); 
 });
